@@ -4,8 +4,13 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam;'>
+		<a-assets>
+			<a-asset-item id="engine" src="assest/test.gltf"></a-asset-item>
+		</a-assets>
 		<a-box position='0 0.5 0' material='opacity: 0.9;'></a-box>
-		<a-entity gltf-model="/assest/test.gltf" position='0 0.5 0' scale="0.5 0.5 0.5"></a-entity>
+		<a-entity position="0 0 0" hide-in-ar-mode="">
+			<a-gltf-model src="#engine" rotation="90 0 0" scale="18 18 18" gltf-model=""></a-gltf-model>
+		</a-entity>
 		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
 </body>
